@@ -5,7 +5,7 @@ const theme = {
   darkBlue: "#282c34",
   lightBlue: "#61dafb",
   bs: "0 -2px 10px rgba(0, 0, 0, 1)",
-  madWidth: "1000px"
+  maxWidth: "1200px"
 };
 
 const GlobalStyle = createGlobalStyle`
