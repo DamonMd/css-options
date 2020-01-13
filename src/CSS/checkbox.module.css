@@ -1,0 +1,20 @@
+.checkContainer {
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 1rem;
+}
+
+.icon {
+  fill: none;
+  stroke: white;
+  stroke-width: 2px;
+}
+
+.checkbox {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: #61dafb;
+  border-radius: 3px;
+  transition: all 150ms;
+}
