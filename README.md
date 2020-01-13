@@ -1,68 +1,40 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# css-options
 
-## Available Scripts
+This repo has a react form(using hooks) that has been duplicated using two different methods to implement css. The form consists of a few standard inputs, a checkbox, and some buttons. Where applicable, I attempted to use different implementations of of the css below, most notably in styled-components as it has more flexibility in how to define/extend some of the css properties and it also allows you to declare the css within the same jsx file.
 
-In the project directory, you can run:
+Overall layout on a page level uses a simple implemetation of css grid(2 columns, auto rows, and some padding between the sections)
 
-### `yarn start`
+## Styled-Components
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+https://www.styled-components.com/
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+A CSS in JS small library
 
-### `yarn test`
+With styled-components you create custom React components that styled-components then renders as a specific and valid HTML element
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Written using standard css
 
-### `yarn build`
+Supports pseudo-classes
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Can be placed within your jsx file or in a seperate js file and imported into your react component as a named import, i.e.
+import Button, { RefactoredButton } from "../Styles/Button"
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Can still set global styling on the body, html, etc
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Can create a theme object with variables that can be used by any styled component
 
-### `yarn eject`
+Allows you to change styles of your components according to its props. Imagine that you want to create a new variant of a button, say large. Then, you don’t have to create a new variable for a new button. Instead, you attach a new prop to the button component and use it to apply different styles, like: props => props.large && css`width: 400px`.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## CSS Modules
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+CSS modules allows you to keep your CSS styles in external CSS files
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Helps them keep their project structure clean and organized.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+You can't however have css declared in your jsx file
 
-## Learn More
+Use named import, i.e. import buttonStyles from './button.module.css'. The ‘buttonStyles’ name can be anything you want. You will use this name later when you will want to reference this stylesheet, when you will want to apply the styles in this stylesheet.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+To import a specific style, defined inside a class, you use the name of the import followed by dot (.) followed by the class name. So, if the button.module.css contains styles for .btnPrimary the syntax will be buttonStyles.btnPrimary
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+One thing that CSS modules allow, and CSS not, is extending one CSS class with another. In other words, you can let one class inherit styles from another. As a result, you don’t have to write the same chunk of CSS multiple times. Instead, you can create a “base” class with all default styles.
