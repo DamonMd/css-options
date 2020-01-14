@@ -12,7 +12,7 @@ function StyledForm() {
     lastName: "",
     tacos: "",
     more: "",
-    selection: "Baby Yoda"
+    selection: "I have spoken..."
   });
 
   const handleCheckBoxChange = () => {
@@ -76,7 +76,11 @@ function StyledForm() {
               onChange={handleInputChange}
             ></textarea>
             <div>
-              <select name="selection" onChange={handleInputChange}>
+              <select
+                name="selection"
+                value={form.selection}
+                onChange={handleInputChange}
+              >
                 {mandoThings.map(thing => (
                   <option key={thing} value={thing}>
                     {thing}
@@ -88,8 +92,10 @@ function StyledForm() {
             <Button cancel onClick={handleCancel}>
               Sith
             </Button>
-            <RefactoredButton>Standard</RefactoredButton>
-            <RefactoredButton primary>IDK</RefactoredButton>
+            <RefactoredButton>Grey</RefactoredButton>
+            <RefactoredButton yoda={form.selection === "Baby Yoda"}>
+              Conditional
+            </RefactoredButton>
           </fieldset>
         </Form>
       </div>

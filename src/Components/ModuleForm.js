@@ -78,6 +78,7 @@ function ModuleForm() {
                 className={formStyles.select}
                 name="selection"
                 onChange={handleInputChange}
+                value={form.selection}
               >
                 {mandoThings.map(thing => (
                   <option key={thing} value={thing}>
@@ -91,6 +92,15 @@ function ModuleForm() {
               bar
             </button>
             <button className={buttonStyles.btn}>biz</button>
+            <button
+              className={
+                form.selection === "Mando"
+                  ? buttonStyles.btnPrimary
+                  : buttonStyles.btn
+              }
+            >
+              Conditional
+            </button>
           </fieldset>
         </form>
       </div>

@@ -48,6 +48,17 @@ const RefactoredButton = styled.button`
         background: ${props.theme.lightBlue};
       }
     `}
+
+  ${props =>
+    props.yoda &&
+    css`
+      color: green;
+      border: 2px solid green;
+      &:hover {
+        color: white;
+        background: green;
+      }
+    `}
 `;
 
 export { RefactoredButton };
