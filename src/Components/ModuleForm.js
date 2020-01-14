@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import CheckboxModule from "./CheckBoxModule";
+import ModuleCheckbox from "./ModuleCheckBox";
 import formStyles from "../CSS/form.module.css";
 import buttonStyles from "../CSS/button.module.css";
 
@@ -34,7 +34,7 @@ function ModuleForm() {
     });
   };
 
-  const mandoThings = ["Baby Yoda", "Mando", "I have spoken"];
+  const mandoThings = ["Baby Yoda", "Mando", "I have spoken..."];
   return (
     <>
       <div>
@@ -63,7 +63,7 @@ function ModuleForm() {
               onChange={handleInputChange}
             />
             <label className={formStyles.label}>Check Please</label>
-            <CheckboxModule
+            <ModuleCheckbox
               checked={isChecked}
               onClick={handleCheckBoxChange}
             />

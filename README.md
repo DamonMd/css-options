@@ -2,7 +2,7 @@
 
 This repo has a react form(using hooks) that has been duplicated using two different methods to implement css. The form consists of a few standard inputs, a checkbox, and some buttons. Where applicable, I attempted to use different implementations of of the css below, most notably in styled-components as it has more flexibility in how to define/extend some of the css properties and it also allows you to declare the css within the same jsx file.
 
-Overall layout on a page level uses a simple implemetation of css grid(2 columns, auto rows, and some padding between the sections)
+Overall layout on a page level uses a simple implemetation of css grid(2 columns, auto rows, and some padding between the columns/rows)
 
 ## Styled-Components
 
@@ -25,6 +25,11 @@ https://www.styled-components.com/
 
 - Allows you to change styles of your components according to its props. Imagine that you want to create a new variant of a button, say large. Then, you don’t have to create a new variable for a new button. Instead, you attach a new prop to the button component and use it to apply different styles, like: `props => props.large && css`width: 400px`.`
 
+- Copmonents using styled-components have the prefix of 'Styled'
+- The css for the form and buttons are located in the Styles directory
+- The Button.js file under the Styles directory has a few examples of how to use props for styling. In addition I show the different ways you can conditionaly style a button in styled components
+- The styled css for the checkbox is co-located in the StyledCheckbox.js to give an example of how to have your styled css and js in the same file
+
 ## CSS Modules
 
 - CSS modules allows you to keep your CSS styles in external CSS files
@@ -38,3 +43,7 @@ https://www.styled-components.com/
 - To import a specific style, defined inside a class, you use the name of the import followed by dot (.) followed by the class name. So, if the button.module.css contains styles for .btnPrimary the syntax will be buttonStyles.btnPrimary
 
 - One thing that CSS modules allow, and CSS not, is extending one CSS class with another. In other words, you can let one class inherit styles from another. As a result, you don’t have to write the same chunk of CSS multiple times. Instead, you can create a “base” class with all default styles.
+
+- Components using css modules have the prefix of 'Module'
+- css modules are located in the CSS directory
+- The button.module.css file takes advantage of the 'compose' property within css modules wherein there is a standard button style and the others inherit those properties and overwrite specific attributes

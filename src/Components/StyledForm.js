@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Form from "../Styles/Form";
 import Button, { RefactoredButton } from "../Styles/Button";
-import Checkbox from "./CheckBox";
+import Checkbox from "./StyledCheckBox";
 
 function StyledForm() {
   const [isChecked, setChecked] = useState(false);
@@ -35,7 +35,7 @@ function StyledForm() {
     });
   };
 
-  const mandoThings = ["Baby Yoda", "Mando", "I have spoken"];
+  const mandoThings = ["Baby Yoda", "Mando", "I have spoken..."];
 
   let StateContainer = styled.div`
     box-shadow: ${({ theme }) => theme.bs};
