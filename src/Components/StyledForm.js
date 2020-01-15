@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Form from "../Styles/Form";
+import Form, { Input } from "../Styles/Form";
 import Button, { RefactoredButton } from "../Styles/Button";
 import Checkbox from "./StyledCheckBox";
 
@@ -110,6 +110,7 @@ function StyledForm() {
             </div>
           );
         })}
+        <div>{/* <Input /> */}</div>
       </StateContainer>
     </>
   );

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const Form = styled.form`
   box-shadow: ${({ theme }) => theme.bs};
@@ -44,4 +44,22 @@ const Form = styled.form`
   }
 `;
 
+const Input = styled.input`
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  border: 1px solid black;
+  margin-bottom: 0.5rem;
+  &:focus {
+    outline: 0;
+    border-color: ${({ theme }) => theme.lightBlue};
+  }
+  ${props =>
+    props.required &&
+    css`
+      border-color: red;
+    `}
+`;
+
+export { Input };
 export default Form;
